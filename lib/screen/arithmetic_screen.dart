@@ -13,6 +13,9 @@ class _ArithmeticScreenState extends State<ArithmeticScreen> {
   int? second;
   int result = 0;
   ArithmeticModel? arithmeticModel;
+
+  //global key for form
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,56 +31,73 @@ class _ArithmeticScreenState extends State<ArithmeticScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8),
-        child: Column(
-          children: [
-            TextField(
-              keyboardType: TextInputType.number,
-              onChanged: (value) {
-                first = int.parse(value);
-              },
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Enter your frist number',
+        child: Form(
+          key: formKey,
+          child: Column(
+            children: [
+              TextFormField(
+                keyboardType: TextInputType.number,
+                onChanged: (value) {
+                  first = int.parse(value);
+                },
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Enter your frist number',
+                ),
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "enter first number";
+                  }
+                  return null;
+                },
               ),
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            TextField(
-              keyboardType: TextInputType.number,
-              onChanged: (value) {
-                second = int.parse(value);
-              },
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Enter your second number',
+              const SizedBox(
+                height: 8,
               ),
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  arithmeticModel = ArithmeticModel(
-                    first: first!,
-                    second: second!,
-                  );
-                  result = arithmeticModel!.add();
-                });
-              },
-              child: const Text('Add'),
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            Text(
-              'Sum is : $result',
-              style: const TextStyle(
-                fontSize: 30,
+              TextFormField(
+                keyboardType: TextInputType.number,
+                onChanged: (value) {
+                  second = int.parse(value);
+                },
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Enter your second number',
+                ),
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "enter second number";
+                  }
+                  return null;
+                },
               ),
-            ),
-          ],
+              const SizedBox(
+                height: 8,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  if (formKey.currentState!.validate()) {
+                    setState(() {
+                      arithmeticModel = ArithmeticModel(
+                        first: first!,
+                        second: second!,
+                      );
+                      result = arithmeticModel!.add();
+                    });
+                  }
+                },
+                child: const Text('Add'),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              Text(
+                'Sum is : $result',
+                style: const TextStyle(
+                  fontSize: 30,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
