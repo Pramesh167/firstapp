@@ -1,5 +1,6 @@
 import 'package:firstapp/screen/area_of_circle.dart';
 import 'package:firstapp/screen/arithmetic_screen.dart';
+import 'package:firstapp/screen/flutter_layout_screen.dart';
 // import 'package:firstapp/screen/hello_world_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: AreaOfCircle(),
+      home: LayoutScreen(),
     );
   }
 }
