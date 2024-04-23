@@ -18,9 +18,9 @@ class _AreaOfCircleState extends State<AreaOfCircle> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.cyan,
+      backgroundColor: Colors.cyan[200],
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: const Color.fromARGB(101, 0, 0, 0),
         title: const Text(
           "Area of Circle",
           style: TextStyle(
@@ -43,7 +43,11 @@ class _AreaOfCircleState extends State<AreaOfCircle> {
                   radius = double.parse(value);
                 },
                 decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.blueAccent)),
                   hintText: 'Enter your radius',
                 ),
                 validator: (value) {
