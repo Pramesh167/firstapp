@@ -10,29 +10,32 @@ class LayoutScreen extends StatelessWidget {
         title: const Text('ASdasd'),
       ),
       body: Container(
-        color: Color.fromARGB(255, 93, 119, 161),
-        height: 50,
+        color: Color.fromARGB(255, 255, 255, 255),
         
+        height: 50,
         child: const Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Column(
+              
               children: [
-                Icon(Icons.phone),
-                Text('Call'),
+                Icon(
+                  Icons.phone,
+                  color: Colors.grey,
+                ),
+                Text('Call',selectionColor: Colors.amber,),
               ],
             ),
             Column(
               children: [
-                Icon(Icons.route),
-                Text('Route'),
-                
+                Icon(Icons.route, color: Colors.grey),
+                Text('Route',selectionColor: Colors.amber,),
               ],
             ),
             Column(
               children: [
-                Icon(Icons.share),
-                Text('Share'),
+                Icon(Icons.share, color: Colors.grey),
+                Text('Share',selectionColor: Colors.amber,),
               ],
             ),
           ],
