@@ -35,6 +35,16 @@ class _ArithmeticScreenState extends State<ArithmeticScreen> {
           key: formKey,
           child: Column(
             children: [
+              RadioListTile(
+              
+                value: 'Add',
+                 groupValue: 'Add',
+                  onChanged: (value){
+            setState(() {
+                
+            });
+          },
+          ),
               TextFormField(
                 keyboardType: TextInputType.number,
                 onChanged: (value) {
