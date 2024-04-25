@@ -85,6 +85,36 @@ class _ArithmeticScreenState extends State<ArithmeticScreen> {
                           group = value;
                         });
                       })),
+              ListTile(
+                  title: const Text('Substract'),
+                  leading: Radio(
+                      value: 'subtract',
+                      groupValue: group,
+                      onChanged: (String? value) {
+                        setState(() {
+                          group = value;
+                        });
+                      })),
+              ListTile(
+                  title: const Text('Multiply'),
+                  leading: Radio(
+                      value: 'multiply',
+                      groupValue: group,
+                      onChanged: (String? value) {
+                        setState(() {
+                          group = value;
+                        });
+                      })),
+              ListTile(
+                  title: const Text('Divide'),
+                  leading: Radio(
+                      value: 'divide',
+                      groupValue: group,
+                      onChanged: (String? value) {
+                        setState(() {
+                          group = value;
+                        });
+                      })),
               ElevatedButton(
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
@@ -97,7 +127,7 @@ class _ArithmeticScreenState extends State<ArithmeticScreen> {
                     });
                   }
                 },
-                child: const Text('Add'),
+                child: const Text('Calculate'),
               ),
               const SizedBox(
                 height: 8,
