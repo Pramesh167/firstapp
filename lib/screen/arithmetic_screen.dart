@@ -12,6 +12,8 @@ class _ArithmeticScreenState extends State<ArithmeticScreen> {
   int? first;
   int? second;
   int result = 0;
+  String? group;
+
   ArithmeticModel? arithmeticModel;
 
   //global key for form
@@ -35,16 +37,6 @@ class _ArithmeticScreenState extends State<ArithmeticScreen> {
           key: formKey,
           child: Column(
             children: [
-              RadioListTile(
-              
-                value: 'Add',
-                 groupValue: 'Add',
-                  onChanged: (value){
-            setState(() {
-                
-            });
-          },
-          ),
               TextFormField(
                 keyboardType: TextInputType.number,
                 onChanged: (value) {
@@ -83,6 +75,16 @@ class _ArithmeticScreenState extends State<ArithmeticScreen> {
               const SizedBox(
                 height: 8,
               ),
+              ListTile(
+                  title: const Text('Add'),
+                  leading: Radio(
+                      value: 'add',
+                      groupValue: group,
+                      onChanged: (String? value) {
+                        setState(() {
+                          group = value;
+                        });
+                      })),
               ElevatedButton(
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
