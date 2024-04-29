@@ -15,7 +15,11 @@ class ListTileScreen extends StatelessWidget {
           children: [
             for (int i = 0; i < 100; i++) ...{
               if (i % 2 == 0) ...{
-                ListTileWidget(index:i),
+                ListTileWidget(index:i,
+                imageName:'image_2.jpg'),
+              }else...{
+              ListTileWidget(index: i,
+              imageName:'image_1.jpg')
               }
             }
           ],
