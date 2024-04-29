@@ -1,9 +1,8 @@
+import 'package:firstapp/screen/output_screen.dart';
 import 'package:flutter/material.dart';
 
 class ListTileWidget extends StatelessWidget {
-  const ListTileWidget(
-    {required this.index,
-     super.key});
+  const ListTileWidget({required this.index, super.key});
   final int index;
 
   @override
@@ -15,12 +14,15 @@ class ListTileWidget extends StatelessWidget {
       trailing: Wrap(
         spacing: 8,
         children: [
-          IconButton(onPressed:(){},icon:const Icon(Icons.edit)),
-          IconButton(onPressed:(){} , icon: const Icon(Icons.delete)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.edit)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.delete)),
         ],
-
-      ) 
-
+      ),
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
+          return OutputScreen(title: index);
+        }));
+      },
     );
   }
 }
