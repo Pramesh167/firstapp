@@ -11,15 +11,22 @@ class FlexibleExpandedScreem extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Container(
-            width: double.infinity,
-            height: 500,
-            color: Colors.red,
-          ),
           Flexible(
+            fit: FlexFit.loose,
+            flex: 1,
             child: Container(
               width: double.infinity,
-              color: Colors.amber,
+              // height: 200,
+              color: const Color.fromARGB(255, 225, 96, 87),
+            ),
+          ),
+          Flexible(
+            fit: FlexFit.tight,
+            flex: 2,
+            child: Container(
+              width: double.infinity,
+              // height: 200,
+              color: const Color.fromARGB(255, 70, 70, 70),
             ),
           )
         ],
