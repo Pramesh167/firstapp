@@ -1,6 +1,7 @@
 import 'package:firstapp/common_widget/listtile_widget.dart';
 import 'package:firstapp/screen/area_of_circle.dart';
 import 'package:firstapp/screen/arithmetic_screen.dart';
+import 'package:firstapp/screen/customer_widget_screen.dart';
 import 'package:firstapp/screen/flutter_layout_screen.dart';
 import 'package:firstapp/screen/list_tile_screen.dart';
 import 'package:firstapp/screen/star_screen.dart';
@@ -13,7 +14,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: ListTileScreen(),
+      home: CustomerWidgetScreen(),
     );
   }
 }
