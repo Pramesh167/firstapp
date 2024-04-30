@@ -1,3 +1,4 @@
+import 'package:firstapp/common_widget/my_button.dart';
 import 'package:flutter/material.dart';
 
 class FlexibleExpandedScreem extends StatelessWidget {
@@ -18,6 +19,18 @@ class FlexibleExpandedScreem extends StatelessWidget {
               width: double.infinity,
               // height: 200,
               color: const Color.fromARGB(255, 225, 96, 87),
+              child: Center(
+                  child: MyButton(
+                      onPressed: () {
+                        ScaffoldMessenger.of(context)
+                            .showSnackBar(const SnackBar(
+                          backgroundColor: Colors.green,
+                          content: Text("Nahi dabana tha"),
+                          duration: Duration(seconds: 1),
+                          behavior: SnackBarBehavior.floating,
+                        ));
+                      },
+                      text: 'Button1')),
             ),
           ),
           Expanded(
@@ -26,6 +39,18 @@ class FlexibleExpandedScreem extends StatelessWidget {
               width: double.infinity,
               // height: 200,
               color: const Color.fromARGB(255, 70, 70, 70),
+              child: Center(
+                  child: MyButton(
+                      onPressed: () {
+                        ScaffoldMessenger.of(context)
+                            .showSnackBar(const SnackBar(
+                          backgroundColor: Colors.green,
+                          content: Text("Fir nahi dabana tha"),
+                          duration: Duration(seconds: 1),
+                          behavior: SnackBarBehavior.floating,
+                        ));
+                      },
+                      text: 'Button 2')),
             ),
           )
         ],
