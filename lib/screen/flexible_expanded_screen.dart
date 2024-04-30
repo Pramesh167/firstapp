@@ -1,4 +1,5 @@
 import 'package:firstapp/common_widget/my_button.dart';
+import 'package:firstapp/common_widget/my_snackbar.dart';
 import 'package:flutter/material.dart';
 
 class FlexibleExpandedScreem extends StatelessWidget {
@@ -22,13 +23,14 @@ class FlexibleExpandedScreem extends StatelessWidget {
               child: Center(
                   child: MyButton(
                       onPressed: () {
-                        ScaffoldMessenger.of(context)
-                            .showSnackBar(const SnackBar(
-                          backgroundColor: Colors.green,
-                          content: Text("Nahi dabana tha"),
-                          duration: Duration(seconds: 1),
-                          behavior: SnackBarBehavior.floating,
-                        ));
+                        // ScaffoldMessenger.of(context)
+                        //     .showSnackBar(const SnackBar(
+                        //   backgroundColor: Colors.green,
+                        //   content: Text("Nahi dabana tha"),
+                        //   duration: Duration(seconds: 1),
+                        //   behavior: SnackBarBehavior.floating,
+                        // ));
+                        showSnackBar(message: 'Good', context: context);
                       },
                       text: 'Button1')),
             ),
@@ -42,13 +44,17 @@ class FlexibleExpandedScreem extends StatelessWidget {
               child: Center(
                   child: MyButton(
                       onPressed: () {
-                        ScaffoldMessenger.of(context)
-                            .showSnackBar(const SnackBar(
-                          backgroundColor: Colors.green,
-                          content: Text("Fir nahi dabana tha"),
-                          duration: Duration(seconds: 1),
-                          behavior: SnackBarBehavior.floating,
-                        ));
+                        // ScaffoldMessenger.of(context)
+                        //     .showSnackBar(const SnackBar(
+                        //   backgroundColor: Colors.green,
+                        //   content: Text("Fir nahi dabana tha"),
+                        //   duration: Duration(seconds: 1),
+                        //   behavior: SnackBarBehavior.floating,
+                        // ));
+                        showSnackBar(
+                            message: "Nahi Dabana Tha",
+                            context: context,
+                            color: Colors.red);
                       },
                       text: 'Button 2')),
             ),
