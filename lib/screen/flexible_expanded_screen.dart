@@ -20,8 +20,7 @@ class FlexibleExpandedScreem extends StatelessWidget {
               color: const Color.fromARGB(255, 225, 96, 87),
             ),
           ),
-          Flexible(
-            fit: FlexFit.tight,
+          Expanded(
             flex: 2,
             child: Container(
               width: double.infinity,
