@@ -58,7 +58,7 @@ class _StudentDetailsScreenState extends State<StudentDetailsScreen> {
               gap,
               SizedBox(
                 width: 300,
-                height: 35,
+                height: 55,
                 child: MyButton(
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
@@ -90,7 +90,7 @@ class _StudentDetailsScreenState extends State<StudentDetailsScreen> {
                         return ListTile(
                           leading: const CircleAvatar(
                             foregroundImage:
-                                AssetImage('assets/images/image1.jpg'),
+                                AssetImage('assets/images/image_1.jpg'),
                           ),
                           title:
                               Text("${student['fname']} ${student['lname']}"),
