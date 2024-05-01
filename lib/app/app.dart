@@ -6,6 +6,7 @@ import 'package:firstapp/screen/flexible_expanded_screen.dart';
 import 'package:firstapp/screen/flutter_layout_screen.dart';
 import 'package:firstapp/screen/list_tile_screen.dart';
 import 'package:firstapp/screen/star_screen.dart';
+import 'package:firstapp/screen/student_detail_screen.dart';
 // import 'package:firstapp/screen/hello_world_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: FlexibleExpandedScreem(),
+      home: StudentDetailsScreen(),
     );
   }
 }
